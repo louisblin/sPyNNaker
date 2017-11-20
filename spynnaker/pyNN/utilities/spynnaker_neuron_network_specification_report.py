@@ -42,32 +42,35 @@ class SpYNNakerNeuronGraphNetworkSpecificationReport(object):
             "generating the graphical representation of the neural network")
 
         # write vertices into dot diagram
-        for vertex_counter, vertex in progress.over(
+        for vertex_id, vertex in progress.over(
                 enumerate(application_graph.vertices), False):
-            dot_diagram.node(
-                "{}".format(vertex_counter),
-                "{} ({} neurons)".format(vertex.label, vertex.n_atoms))
-            vertex_holders[vertex] = vertex_counter
+            self._write_vertex(vertex_id, vertex, vertex_holders, dot_diagram)
 
         # write edges into dot diagram
         for partition in progress.over(
                 application_graph.outgoing_edge_partitions, False):
-            for edge in partition.edges:
-                source_vertex_id = vertex_holders[edge.pre_vertex]
-                dest_vertex_id = vertex_holders[edge.post_vertex]
-                if isinstance(edge, ProjectionApplicationEdge):
-                    for synapse_info in edge.synapse_information:
-                        dot_diagram.edge(
-                            "{}".format(source_vertex_id),
-                            "{}".format(dest_vertex_id),
-                            "{}".format(synapse_info.connector))
-                else:
-                    dot_diagram.edge(
-                        "{}".format(source_vertex_id),
-                        "{}".format(dest_vertex_id))
+            self._write_partition(partition, vertex_holders, dot_diagram)
 
-        # write dot file and generate pdf
+        # write dot file and generate PDF
         file_to_output = os.path.join(report_folder, "network_graph.gv")
         dot_diagram.render(file_to_output, view=False)
         progress.update()
         progress.end()
+
+    def _write_vertex(self, vertex_id, vertex, vertex_dict, diagram):
+        diagram.node(
+            str(vertex_id),
+            "{} ({} neurons)".format(vertex.label, vertex.n_atoms))
+        vertex_dict[vertex] = str(vertex_id)
+
+    def _write_partition(self, partition, vertex_dict, diagram):
+        for edge in partition.edges:
+            source_vertex_id = vertex_dict[edge.pre_vertex]
+            dest_vertex_id = vertex_dict[edge.post_vertex]
+            if isinstance(edge, ProjectionApplicationEdge):
+                for synapse_info in edge.synapse_information:
+                    diagram.edge(
+                        source_vertex_id, dest_vertex_id,
+                        str(synapse_info.connector))
+            else:
+                diagram.edge(source_vertex_id, dest_vertex_id)
