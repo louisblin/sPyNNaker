@@ -1,14 +1,12 @@
 """
-utility class containing simple helper methods
+utility file containing simple helper functions
 """
-import numpy
 import os
 import logging
 import struct
-
-from spinn_utilities.safe_eval import SafeEval
-
+import numpy
 from scipy.stats import binom
+from spinn_utilities.safe_eval import SafeEval
 from spinn_front_end_common.utilities import globals_variables
 from spinn_front_end_common.utilities.exceptions import ConfigurationException
 

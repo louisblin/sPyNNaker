@@ -1,8 +1,7 @@
+import logging
 from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
 from spynnaker.pyNN.external_devices_models import ExternalDeviceLifControl
 from spynnaker.pyNN.protocols import MunichIoSpiNNakerLinkProtocol
-
-import logging
 
 logger = logging.getLogger(__name__)
 _abstract_defaults = AbstractPopulationVertex.non_pynn_default_parameters

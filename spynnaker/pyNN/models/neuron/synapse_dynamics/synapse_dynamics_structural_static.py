@@ -1,17 +1,16 @@
 from spinn_utilities.overrides import overrides
-from spynnaker.pyNN.models.neuron.synapse_dynamics import \
-    AbstractSynapseDynamicsStructural
-from spynnaker.pyNN.models.neuron.synapse_dynamics. \
-    synapse_dynamics_structural_common import \
+from spynnaker.pyNN.models.neuron.synapse_dynamics import (
+    AbstractSynapseDynamicsStructural)
+from .synapse_dynamics_structural_common import \
     SynapseDynamicsStructuralCommon as CommonSP
 from .synapse_dynamics_static import SynapseDynamicsStatic
 
 
 class SynapseDynamicsStructuralStatic(AbstractSynapseDynamicsStructural,
                                       SynapseDynamicsStatic):
-    """ Class that enables synaptic rewiring. It acts as a wrapper
-        around SynapseDynamicsStatic.
-        This means rewiring can operate in parallel with these
+    """ Class that enables synaptic rewiring. It acts as a wrapper\
+        around SynapseDynamicsStatic.\
+        This means rewiring can operate in parallel with these\
         types of synapses.
 
         Written by Petrut Bogdan.
@@ -36,8 +35,7 @@ class SynapseDynamicsStructuralStatic(AbstractSynapseDynamicsStructural,
                 )
             )
 
-
-    :param f_rew: Frequency of rewiring (Hz). How many rewiring attempts will
+    :param f_rew: Frequency of rewiring (Hz). How many rewiring attempts will\
         be done per second.
     :type f_rew: int
     :param weight: Initial weight assigned to a newly formed connection
@@ -60,11 +58,11 @@ class SynapseDynamicsStructuralStatic(AbstractSynapseDynamicsStructural,
     :type p_elim_dep: float
     :param grid: Grid shape
     :type grid: 2d int array
-    :param lateral_inhibition: Flag whether to mark synapses formed within a
+    :param lateral_inhibition: Flag whether to mark synapses formed within a\
         layer as inhibitory or excitatory
     :type lateral_inhibition: bool
-    :param random_partner: Flag whether to randomly select pre-synaptic
-        partner for formation
+    :param random_partner: \
+        Flag whether to randomly select pre-synaptic partner for formation
     :type random_partner: bool
     :param seed: seed the random number generators
     :type seed: int
@@ -132,11 +130,6 @@ class SynapseDynamicsStructuralStatic(AbstractSynapseDynamicsStructural,
             return False
         return self._common_sp.is_same_as(synapse_dynamics)
 
-    @overrides(SynapseDynamicsStatic.are_weights_signed)
-    def are_weights_signed(self):
-        return super(SynapseDynamicsStructuralStatic,
-                     self).are_weights_signed()
-
     @overrides(SynapseDynamicsStatic.get_vertex_executable_suffix)
     def get_vertex_executable_suffix(self):
         name = super(SynapseDynamicsStructuralStatic,
@@ -148,13 +141,11 @@ class SynapseDynamicsStructuralStatic(AbstractSynapseDynamicsStructural,
                additional_arguments={"in_edges"})
     def get_parameters_sdram_usage_in_bytes(self, n_neurons,
                                             n_synapse_types, in_edges):
-        initial_size = \
-            super(SynapseDynamicsStructuralStatic, self). \
+        initial_size = super(SynapseDynamicsStructuralStatic, self). \
             get_parameters_sdram_usage_in_bytes(
                 n_neurons, n_synapse_types)
-        initial_size += \
-            self._common_sp.get_parameters_sdram_usage_in_bytes(
-                n_neurons, n_synapse_types, in_edges)
+        initial_size += self._common_sp.get_parameters_sdram_usage_in_bytes(
+            n_neurons, n_synapse_types, in_edges)
         return initial_size
 
     @overrides(SynapseDynamicsStatic.get_n_words_for_static_connections)
@@ -166,9 +157,9 @@ class SynapseDynamicsStructuralStatic(AbstractSynapseDynamicsStructural,
 
     @overrides(SynapseDynamicsStatic.get_static_synaptic_data,
                additional_arguments={"app_edge", "machine_edge"})
-    def get_static_synaptic_data(self, connections, connection_row_indices,
-                                 n_rows, post_vertex_slice,
-                                 n_synapse_types, app_edge, machine_edge):
+    def get_static_synaptic_data(
+            self, connections, connection_row_indices, n_rows,
+            post_vertex_slice, n_synapse_types, app_edge, machine_edge):
         self._common_sp.synaptic_data_update(
             connections, post_vertex_slice,
             app_edge, machine_edge)
@@ -177,34 +168,9 @@ class SynapseDynamicsStructuralStatic(AbstractSynapseDynamicsStructural,
             connections, connection_row_indices, n_rows, post_vertex_slice,
             n_synapse_types)
 
-    @overrides(SynapseDynamicsStatic.get_n_static_words_per_row)
-    def get_n_static_words_per_row(self, ff_size):
-
-        return super(SynapseDynamicsStructuralStatic,
-                     self).get_n_static_words_per_row(ff_size)
-
-    @overrides(SynapseDynamicsStatic.get_n_synapses_in_rows)
-    def get_n_synapses_in_rows(self, ff_size):
-        return super(SynapseDynamicsStructuralStatic,
-                     self).get_n_synapses_in_rows(ff_size)
-
-    @overrides(SynapseDynamicsStatic.read_static_synaptic_data)
-    def read_static_synaptic_data(self, post_vertex_slice, n_synapse_types,
-                                  ff_size, ff_data):
-        return super(SynapseDynamicsStructuralStatic,
-                     self).read_static_synaptic_data(post_vertex_slice,
-                                                     n_synapse_types, ff_size,
-                                                     ff_data)
-
     @overrides(SynapseDynamicsStatic.get_parameter_names)
     def get_parameter_names(self):
         names = super(SynapseDynamicsStructuralStatic,
                       self).get_parameter_names()
         names.extend(self._common_sp.get_parameter_names())
-
         return names
-
-    @overrides(SynapseDynamicsStatic.get_max_synapses)
-    def get_max_synapses(self, n_words):
-        return super(SynapseDynamicsStructuralStatic, self).get_max_synapses(
-            n_words)

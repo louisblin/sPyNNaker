@@ -1,7 +1,6 @@
-from spinn_utilities.overrides import overrides
-from spynnaker.pyNN.models.neuron.plasticity.stdp.synapse_structure \
-    import AbstractSynapseStructure
 import numpy
+from spinn_utilities.overrides import overrides
+from .abstract_synapse_structure import AbstractSynapseStructure
 
 
 class SynapseStructureWeightAccumulator(AbstractSynapseStructure):

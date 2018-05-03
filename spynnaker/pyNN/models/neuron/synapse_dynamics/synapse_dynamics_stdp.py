@@ -1,11 +1,10 @@
 import math
 import numpy
-
-from spinn_front_end_common.abstract_models import AbstractChangableAfterRun
 from spinn_utilities.overrides import overrides
+from spinn_front_end_common.abstract_models import AbstractChangableAfterRun
 from spynnaker.pyNN.models.abstract_models import AbstractSettable
-from .abstract_plastic_synapse_dynamics import AbstractPlasticSynapseDynamics
 from spynnaker.pyNN.exceptions import InvalidParameterType
+from .abstract_plastic_synapse_dynamics import AbstractPlasticSynapseDynamics
 
 # How large are the time-stamps stored with each event
 TIME_STAMP_BYTES = 4

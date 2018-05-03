@@ -1,12 +1,10 @@
+from enum import Enum
+import numpy
 from spinn_utilities.overrides import overrides
 from pacman.executor.injection_decorator import inject_items
+from data_specification.enums import DataType
 from spynnaker.pyNN.models.neural_properties import NeuronParameter
 from .neuron_model_leaky_integrate import NeuronModelLeakyIntegrate
-
-from data_specification.enums import DataType
-
-import numpy
-from enum import Enum
 
 V_RESET = "v_reset"
 TAU_REFRAC = "tau_refrac"

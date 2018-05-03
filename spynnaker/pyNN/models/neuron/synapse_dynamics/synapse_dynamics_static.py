@@ -1,11 +1,10 @@
-import numpy
 import math
-
-from spinn_front_end_common.abstract_models import AbstractChangableAfterRun
+import numpy
 from spinn_utilities.overrides import overrides
+from spinn_front_end_common.abstract_models import AbstractChangableAfterRun
 from spynnaker.pyNN.models.abstract_models import AbstractSettable
-from .abstract_static_synapse_dynamics import AbstractStaticSynapseDynamics
 from spynnaker.pyNN.exceptions import InvalidParameterType
+from .abstract_static_synapse_dynamics import AbstractStaticSynapseDynamics
 from .abstract_synapse_dynamics import AbstractSynapseDynamics
 
 

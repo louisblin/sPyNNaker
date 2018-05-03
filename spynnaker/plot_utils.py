@@ -1,8 +1,6 @@
-# Imports
-import numpy as np
 import sys
+import numpy as np
 # pylint: disable=consider-using-enumerate
-
 try:
     import matplotlib.pyplot as plt
     matplotlib_missing = False

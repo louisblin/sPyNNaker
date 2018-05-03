@@ -1,13 +1,13 @@
+import logging
+import math
+import re
+import numpy
 from six import add_metaclass, string_types
 from spinn_utilities.safe_eval import SafeEval
 from spinn_front_end_common.utilities.utility_objs import ProvenanceDataItem
 from spinn_utilities.abstract_base import AbstractBase, abstractmethod
 from spinn_front_end_common.utilities.globals_variables import get_simulator
 from spynnaker.pyNN.utilities import utility_calls
-import logging
-import numpy
-import math
-import re
 
 # global objects
 logger = logging.getLogger(__name__)

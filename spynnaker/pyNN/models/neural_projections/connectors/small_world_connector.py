@@ -1,6 +1,6 @@
+import numpy
 from .abstract_connector import AbstractConnector
 from spinn_utilities.overrides import overrides
-import numpy
 
 
 class SmallWorldConnector(AbstractConnector):

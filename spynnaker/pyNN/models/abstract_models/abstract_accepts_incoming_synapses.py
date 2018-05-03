@@ -1,7 +1,6 @@
 from six import add_metaclass
-
-from spinn_utilities.abstract_base import AbstractBase
-from spinn_utilities.abstract_base import abstractproperty, abstractmethod
+from spinn_utilities.abstract_base import (
+    AbstractBase, abstractproperty, abstractmethod)
 
 
 @add_metaclass(AbstractBase)
@@ -15,21 +14,18 @@ class AbstractAcceptsIncomingSynapses(object):
         """ The synapse type of the vertex
 
         :rtype:\
-            :py:class:`spynnaker.pyNN.models.neuron.synapse_types.abstract_synapse_type.AbstractSynapseType`
+            :py:class:`spynnaker.pyNN.models.neuron.synapse_types.AbstractSynapseType`
         """
-        pass
 
     @abstractmethod
     def set_synapse_dynamics(self, synapse_dynamics):
         """ Set the synapse dynamics of this vertex
         """
-        pass
 
     @abstractmethod
     def get_maximum_delay_supported_in_ms(self, machine_time_step):
         """ Get the maximum delay supported by this vertex
         """
-        pass
 
     @abstractmethod
     def add_pre_run_connection_holder(
@@ -37,7 +33,6 @@ class AbstractAcceptsIncomingSynapses(object):
         """ Add a connection holder to the vertex to be filled in when the\
             connections are actually generated
         """
-        pass
 
     @abstractmethod
     def get_connections_from_machine(
@@ -50,7 +45,6 @@ class AbstractAcceptsIncomingSynapses(object):
         # pylint: disable=too-many-arguments
         """ Get the connections from the machine post-run
         """
-        pass
 
     @abstractmethod
     def clear_connection_cache(self):

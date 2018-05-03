@@ -1,27 +1,23 @@
-from spinn_utilities.overrides import overrides
-
-from .threshold_type_multicast_device_control \
-    import ThresholdTypeMulticastDeviceControl
-from .abstract_ethernet_controller import AbstractEthernetController
-
-from pacman.model.constraints.key_allocator_constraints import \
-    FixedKeyAndMaskConstraint
-from pacman.model.routing_info import BaseKeyAndMask
-
-from spinn_front_end_common.abstract_models import \
-    AbstractProvidesOutgoingPartitionConstraints
-from spinn_front_end_common.utilities.exceptions import ConfigurationException
-from spinn_front_end_common.abstract_models \
-    import AbstractVertexWithEdgeToDependentVertices
-
-from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
-from spynnaker.pyNN.models.neuron.input_types import InputTypeCurrent
-from spynnaker.pyNN.models.neuron.neuron_models \
-    import NeuronModelLeakyIntegrateAndFire
-from spynnaker.pyNN.models.neuron.synapse_types import SynapseTypeExponential
-
 import logging
 from collections import OrderedDict
+from spinn_utilities.overrides import overrides
+from pacman.model.constraints.key_allocator_constraints import (
+    FixedKeyAndMaskConstraint)
+from pacman.model.routing_info import BaseKeyAndMask
+from spinn_front_end_common.abstract_models import (
+    AbstractProvidesOutgoingPartitionConstraints)
+from spinn_front_end_common.utilities.exceptions import ConfigurationException
+from spinn_front_end_common.abstract_models import (
+    AbstractVertexWithEdgeToDependentVertices)
+from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
+from spynnaker.pyNN.models.neuron.input_types import InputTypeCurrent
+from spynnaker.pyNN.models.neuron.neuron_models import (
+    NeuronModelLeakyIntegrateAndFire)
+from spynnaker.pyNN.models.neuron.synapse_types import SynapseTypeExponential
+from .threshold_type_multicast_device_control import (
+    ThresholdTypeMulticastDeviceControl)
+from .abstract_ethernet_controller import AbstractEthernetController
+
 
 logger = logging.getLogger(__name__)
 _apv_defs = AbstractPopulationVertex.non_pynn_default_parameters

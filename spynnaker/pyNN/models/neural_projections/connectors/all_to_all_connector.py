@@ -1,7 +1,7 @@
+import logging
+import numpy
 from spinn_utilities.overrides import overrides
 from .abstract_connector import AbstractConnector
-import numpy
-import logging
 
 logger = logging.getLogger(__file__)
 

@@ -1,9 +1,7 @@
 from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
-from spynnaker.pyNN.external_devices_models.push_bot.push_bot_ethernet \
-    import PushBotTranslator
+from spynnaker.pyNN.external_devices_models.push_bot.push_bot_ethernet import (
+    PushBotTranslator, get_pushbot_wifi_connection)
 from spynnaker.pyNN.external_devices_models import ExternalDeviceLifControl
-from spynnaker.pyNN.external_devices_models.push_bot.push_bot_ethernet \
-    import get_pushbot_wifi_connection
 
 _abstract_defaults = AbstractPopulationVertex.non_pynn_default_parameters
 _extern_defaults = ExternalDeviceLifControl.default_parameters

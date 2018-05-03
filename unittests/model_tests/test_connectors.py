@@ -1,12 +1,12 @@
 from __future__ import print_function
-from pacman.model.graphs.common.slice import Slice
+import functools
+from unittests.mocks import MockSimulator, MockPopulation
 import numpy
 import pytest
-import functools
-from spynnaker.pyNN.models.neural_projections.connectors \
-    import FixedNumberPreConnector, FixedNumberPostConnector, \
-    FixedProbabilityConnector, IndexBasedProbabilityConnector
-from unittests.mocks import MockSimulator, MockPopulation
+from pacman.model.graphs.common.slice import Slice
+from spynnaker.pyNN.models.neural_projections.connectors import (
+    FixedNumberPreConnector, FixedNumberPostConnector,
+    FixedProbabilityConnector, IndexBasedProbabilityConnector)
 
 
 @pytest.fixture(scope="module", params=[10, 100])

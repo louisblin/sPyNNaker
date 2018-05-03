@@ -1,7 +1,6 @@
 from spinn_front_end_common.utilities.connections import LiveEventConnection
 from spinn_front_end_common.utilities.constants import NOTIFY_PORT
 
-
 # The maximum number of 32-bit keys that will fit in a packet
 _MAX_FULL_KEYS_PER_PACKET = 63
 

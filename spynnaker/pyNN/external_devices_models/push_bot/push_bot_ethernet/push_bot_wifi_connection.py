@@ -1,14 +1,11 @@
-from spinnman.connections.abstract_classes import Listenable
-from spinnman.connections.abstract_classes import Connection
-from spinnman.exceptions import SpinnmanIOException
-from spinnman.exceptions import SpinnmanTimeoutException
-
 import platform
 import subprocess
 import socket
 import select
 import logging
 from six import raise_from
+from spinnman.connections.abstract_classes import Listenable, Connection
+from spinnman.exceptions import SpinnmanIOException, SpinnmanTimeoutException
 
 logger = logging.getLogger(__name__)
 

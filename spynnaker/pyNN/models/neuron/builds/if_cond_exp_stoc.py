@@ -1,10 +1,10 @@
 from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
-from spynnaker.pyNN.models.neuron.neuron_models \
-    import NeuronModelLeakyIntegrateAndFire
+from spynnaker.pyNN.models.neuron.neuron_models import (
+    NeuronModelLeakyIntegrateAndFire)
 from spynnaker.pyNN.models.neuron.synapse_types import SynapseTypeExponential
 from spynnaker.pyNN.models.neuron.input_types import InputTypeConductance
-from spynnaker.pyNN.models.neuron.threshold_types \
-    import ThresholdTypeMaassStochastic
+from spynnaker.pyNN.models.neuron.threshold_types import (
+    ThresholdTypeMaassStochastic)
 
 # global objects
 DEFAULT_MAX_ATOMS_PER_CORE = 255

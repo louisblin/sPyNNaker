@@ -1,7 +1,7 @@
 from threading import Thread
-import numpy
 import socket
 import math
+import numpy
 
 # Value of brightest pixel to show
 _DISPLAY_MAX = 33.0

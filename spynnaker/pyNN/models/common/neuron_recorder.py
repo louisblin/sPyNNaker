@@ -5,7 +5,6 @@ import math
 import numpy
 from six import iteritems, raise_from
 from six.moves import range, xrange
-
 from data_specification.enums import DataType
 from spinn_front_end_common.utilities.exceptions import ConfigurationException
 from spinn_front_end_common.utilities import globals_variables

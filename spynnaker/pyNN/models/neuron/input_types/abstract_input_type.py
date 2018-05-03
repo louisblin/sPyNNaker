@@ -1,5 +1,4 @@
 from six import add_metaclass
-
 from spinn_utilities.abstract_base import AbstractBase, abstractmethod
 
 
@@ -75,4 +74,3 @@ class AbstractInputType(object):
             as get_input_type_parameters
         :param vertex_slice: The neurons to which the parameters apply
         """
-        pass

@@ -1,9 +1,9 @@
+import math
+import numpy
 from spinn_utilities.overrides import overrides
 from spynnaker.pyNN.utilities import utility_calls
 from .abstract_connector import AbstractConnector
 from spinn_front_end_common.utilities.exceptions import ConfigurationException
-import math
-import numpy
 
 
 class FixedProbabilityConnector(AbstractConnector):

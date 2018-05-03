@@ -1,8 +1,6 @@
 import math
 import logging
-
 from data_specification.enums import DataType
-
 from spinn_front_end_common.utilities.utility_objs import ProvenanceDataItem
 
 logger = logging.getLogger(__name__)

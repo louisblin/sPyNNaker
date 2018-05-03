@@ -1,20 +1,17 @@
+import logging
+import numpy
+from six import iteritems, string_types
 from pacman.model.constraints import AbstractConstraint
-from pacman.model.constraints.placer_constraints\
-    import ChipAndCoreConstraint
-
-from spynnaker.pyNN.models.abstract_models \
-    import AbstractReadParametersBeforeSet, AbstractContainsUnits
-from spynnaker.pyNN.models.abstract_models \
-    import AbstractPopulationInitializable, AbstractPopulationSettable
-from spynnaker.pyNN.models.neuron.input_types import InputTypeConductance
-
+from pacman.model.constraints.placer_constraints import (
+    ChipAndCoreConstraint)
 from spinn_front_end_common.utilities import globals_variables
 from spinn_front_end_common.utilities.exceptions import ConfigurationException
 from spinn_front_end_common.abstract_models import AbstractChangableAfterRun
+from spynnaker.pyNN.models.abstract_models import (
+    AbstractReadParametersBeforeSet, AbstractContainsUnits,
+    AbstractPopulationInitializable, AbstractPopulationSettable)
+from spynnaker.pyNN.models.neuron.input_types import InputTypeConductance
 
-import numpy
-import logging
-from six import iteritems, string_types
 logger = logging.getLogger(__file__)
 
 

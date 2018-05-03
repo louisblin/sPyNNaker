@@ -1,11 +1,10 @@
-from spinn_utilities.overrides import overrides
-from spynnaker.pyNN.utilities import utility_calls
-from .abstract_connector import AbstractConnector
-from spynnaker.pyNN.exceptions import SpynnakerException
-from spinn_utilities.abstract_base import abstractmethod
-
 import numpy.random
 from six import raise_from
+from spinn_utilities.overrides import overrides
+from spinn_utilities.abstract_base import abstractmethod
+from spynnaker.pyNN.utilities import utility_calls
+from spynnaker.pyNN.exceptions import SpynnakerException
+from .abstract_connector import AbstractConnector
 
 
 class MultapseConnector(AbstractConnector):

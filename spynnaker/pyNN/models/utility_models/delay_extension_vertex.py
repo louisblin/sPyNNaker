@@ -1,30 +1,22 @@
 import logging
 import math
 import random
-
 from spinn_utilities.overrides import overrides
-
-from spinn_front_end_common.utilities.constants import \
-    SARK_PER_MALLOC_SDRAM_USAGE, SYSTEM_BYTES_REQUIREMENT
-
 from pacman.executor.injection_decorator import inject_items
-from pacman.model.constraints.key_allocator_constraints \
-    import ContiguousKeyRangeContraint
-from pacman.model.constraints.partitioner_constraints \
-    import SameAtomsAsVertexConstraint
+from pacman.model.constraints.key_allocator_constraints import (
+    ContiguousKeyRangeContraint)
+from pacman.model.constraints.partitioner_constraints import (
+    SameAtomsAsVertexConstraint)
 from pacman.model.graphs.application import ApplicationVertex
-from pacman.model.resources import CPUCyclesPerTickResource, DTCMResource
-from pacman.model.resources import ResourceContainer, SDRAMResource
-
-from spinn_front_end_common.abstract_models \
-    import AbstractProvidesNKeysForPartition
-from spinn_front_end_common.abstract_models import \
-    AbstractProvidesOutgoingPartitionConstraints
+from pacman.model.resources import (
+    CPUCyclesPerTickResource, DTCMResource, ResourceContainer, SDRAMResource)
+from spinn_front_end_common.utilities.constants import (
+    SARK_PER_MALLOC_SDRAM_USAGE, SYSTEM_BYTES_REQUIREMENT)
+from spinn_front_end_common.abstract_models import (
+    AbstractProvidesNKeysForPartition, AbstractGeneratesDataSpecification,
+    AbstractHasAssociatedBinary, AbstractProvidesOutgoingPartitionConstraints)
 from spinn_front_end_common.interface.simulation import simulation_utilities
 from spinn_front_end_common.utilities.utility_objs import ExecutableType
-
-from spinn_front_end_common.abstract_models \
-    import AbstractGeneratesDataSpecification, AbstractHasAssociatedBinary
 from .delay_block import DelayBlock
 from .delay_extension_machine_vertex import DelayExtensionMachineVertex
 from spynnaker.pyNN.utilities.constants import SPIKE_PARTITION_ID

@@ -1,15 +1,15 @@
+from enum import Enum
+import numpy
 from spinn_utilities.overrides import overrides
 from spinn_utilities.ranged.abstract_list import AbstractList
-from spynnaker.pyNN.models.abstract_models import AbstractContainsUnits
 from pacman.executor.injection_decorator import inject_items
+from data_specification.enums import DataType
+from spynnaker.pyNN.models.abstract_models import AbstractContainsUnits
 from spynnaker.pyNN.models.neural_properties import NeuronParameter
 from spynnaker.pyNN.utilities.ranged.spynakker_ranged_dict import \
     SpynakkerRangeDictionary as SpynnakerRangeDictionary
 from .abstract_synapse_type import AbstractSynapseType
-from data_specification.enums import DataType
 
-import numpy
-from enum import Enum
 
 TAU_SYN_E = 'tau_syn_E'
 TAU_SYN_I = 'tau_syn_I'

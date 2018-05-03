@@ -1,9 +1,9 @@
+import logging
 from spinn_utilities.overrides import overrides
-from spynnaker.pyNN.models.abstract_models \
-    import AbstractWeightUpdatable, AbstractFilterableEdge
+from spynnaker.pyNN.models.abstract_models import (
+    AbstractWeightUpdatable, AbstractFilterableEdge)
 from pacman.model.graphs.machine import MachineEdge
 
-import logging
 logger = logging.getLogger(__name__)
 
 

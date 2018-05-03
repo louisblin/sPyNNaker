@@ -1,18 +1,13 @@
+from enum import Enum
 from spinn_utilities.overrides import overrides
 from pacman.executor.injection_decorator import inject_items
-from spynnaker.pyNN.utilities.ranged.spynakker_ranged_dict \
-    import SpynakkerRangeDictionary
-from spynnaker.pyNN.models.neuron.synapse_types.synapse_type_exponential \
-    import get_exponential_decay_and_init
-
-from spynnaker.pyNN.models.neuron.synapse_types.abstract_synapse_type import \
-    AbstractSynapseType
-from spynnaker.pyNN.utilities.utility_calls import convert_param_to_numpy
-from spynnaker.pyNN.models.neural_properties.neural_parameter \
-    import NeuronParameter
-
 from data_specification.enums.data_type import DataType
-from enum import Enum
+from spynnaker.pyNN.utilities.ranged.spynakker_ranged_dict import (
+    SpynakkerRangeDictionary)
+from .synapse_type_exponential import get_exponential_decay_and_init
+from .abstract_synapse_type import AbstractSynapseType
+from spynnaker.pyNN.utilities.utility_calls import convert_param_to_numpy
+from spynnaker.pyNN.models.neural_properties import NeuronParameter
 
 EXC_RESPONSE = "exc_response"
 EXC_EXP_RESPONSE = "exc_exp_response"

@@ -1,6 +1,6 @@
 from .abstract_synapse_dynamics import AbstractSynapseDynamics
-from .abstract_synapse_dynamics_structural \
-    import AbstractSynapseDynamicsStructural
+from .abstract_synapse_dynamics_structural import (
+    AbstractSynapseDynamicsStructural)
 from .abstract_static_synapse_dynamics import AbstractStaticSynapseDynamics
 from .abstract_plastic_synapse_dynamics import AbstractPlasticSynapseDynamics
 from .pynn_synapse_dynamics import PyNNSynapseDynamics

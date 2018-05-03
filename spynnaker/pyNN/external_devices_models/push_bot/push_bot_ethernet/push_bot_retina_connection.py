@@ -1,8 +1,6 @@
 import logging
 from threading import RLock
-
 import numpy
-
 from spinnman.connections import ConnectionListener
 from spynnaker.pyNN.connections import SpynnakerLiveSpikesConnection
 from spynnaker.pyNN.external_devices_models.push_bot.push_bot_parameters \

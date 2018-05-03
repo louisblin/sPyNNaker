@@ -1,7 +1,7 @@
+from enum import Enum
 from data_specification.enums import DataType
 from spynnaker.pyNN.models.neural_properties import NeuronParameter
 from spynnaker.pyNN.models.neuron.threshold_types import AbstractThresholdType
-from enum import Enum
 
 
 class _THRESHOLD_TYPE_MULTICAST(Enum):

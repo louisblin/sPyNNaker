@@ -1,13 +1,11 @@
-from data_specification.enums import DataType
+from enum import Enum
 from spinn_utilities.overrides import overrides
+from data_specification.enums import DataType
 from spynnaker.pyNN.models.abstract_models import AbstractContainsUnits
 from spynnaker.pyNN.models.neural_properties import NeuronParameter
-from spynnaker.pyNN.utilities.ranged.spynakker_ranged_dict import \
-    SpynakkerRangeDictionary
-
+from spynnaker.pyNN.utilities.ranged.spynakker_ranged_dict import (
+    SpynakkerRangeDictionary)
 from .abstract_input_type import AbstractInputType
-
-from enum import Enum
 
 E_REV_E = "e_rev_E"
 E_REV_I = "e_rev_I"

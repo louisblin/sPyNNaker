@@ -1,6 +1,6 @@
+import numpy
 from spinn_utilities.overrides import overrides
 from .abstract_synapse_structure import AbstractSynapseStructure
-import numpy
 
 
 class SynapseStructureWeightOnly(AbstractSynapseStructure):

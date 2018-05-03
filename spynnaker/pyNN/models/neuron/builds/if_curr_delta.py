@@ -1,6 +1,6 @@
 from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
-from spynnaker.pyNN.models.neuron.neuron_models \
-    import NeuronModelLeakyIntegrateAndFire
+from spynnaker.pyNN.models.neuron.neuron_models import (
+    NeuronModelLeakyIntegrateAndFire)
 from spynnaker.pyNN.models.neuron.input_types import InputTypeCurrent
 from spynnaker.pyNN.models.neuron.threshold_types import ThresholdTypeStatic
 from spynnaker.pyNN.models.neuron.synapse_types import SynapseTypeDelta

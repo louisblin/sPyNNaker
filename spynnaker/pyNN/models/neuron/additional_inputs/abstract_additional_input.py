@@ -1,5 +1,4 @@
 from six import add_metaclass
-
 from spinn_utilities.abstract_base import AbstractBase, abstractmethod
 
 
@@ -24,7 +23,7 @@ class AbstractAdditionalInput(object):
 
         :return: An array of parameters
         :rtype: array of\
-                :py:class:`spynnaker.pyNN.models.neural_properties.neural_parameter.NeuronParameter`
+            :py:class:`spynnaker.pyNN.models.neural_properties.NeuronParameter`
         """
 
     @abstractmethod
@@ -61,12 +60,11 @@ class AbstractAdditionalInput(object):
     def set_parameters(self, parameters, vertex_slice):
         """ Set the parameters for a given subset of neurons.
 
-            To be overridden only when there is a changing variable to
-            extract
+            To be overridden only when there is a changing variable to\
+            extract.
 
         :param parameters:\
             the parameter values in a list of numpy arrays, ordered the same\
             as get_neural_parameters
         :param vertex_slice: The neurons to which the parameters apply
         """
-        pass

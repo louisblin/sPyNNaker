@@ -1,20 +1,15 @@
-
-# spynnaker imports
+import logging
 import struct
+import sys
+import math
+import numpy
 from pacman.model.abstract_classes import AbstractHasGlobalMaxAtoms
 from pacman.model.graphs.application import ApplicationVertex
 from spinn_utilities.overrides import overrides
-
-from spynnaker.pyNN.models.neural_projections \
-    import ProjectionApplicationEdge, ProjectionMachineEdge
+from spynnaker.pyNN.models.neural_projections import (
+    ProjectionApplicationEdge, ProjectionMachineEdge)
 from spynnaker.pyNN.exceptions import SynapseRowTooBigException
 from .abstract_master_pop_table_factory import AbstractMasterPopTableFactory
-
-# general imports
-import logging
-import numpy
-import sys
-import math
 
 logger = logging.getLogger(__name__)
 _TWO_WORDS = struct.Struct("<II")

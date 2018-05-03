@@ -1,14 +1,14 @@
 from pacman.model.graphs.application import ApplicationEdge
 from spinnman.messages.eieio import EIEIOType
 from spinn_front_end_common.utilities.globals_variables import get_simulator
-from spynnaker.pyNN.utilities import constants
 from spinn_front_end_common.utilities import helpful_functions
-from spinn_front_end_common.utility_models \
-    import ReverseIpTagMultiCastSource
-from spinn_front_end_common.utilities.notification_protocol \
-    import SocketAddress
-from spinn_front_end_common.utilities.utility_objs \
-    import LivePacketGatherParameters
+from spinn_front_end_common.utilities.notification_protocol import (
+    SocketAddress)
+from spinn_front_end_common.utilities.utility_objs import (
+    LivePacketGatherParameters)
+from spinn_front_end_common.utility_models import (
+    ReverseIpTagMultiCastSource)
+from spynnaker.pyNN.utilities import constants
 
 
 class SpynnakerExternalDevicePluginManager(object):

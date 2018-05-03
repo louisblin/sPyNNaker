@@ -1,5 +1,5 @@
-from spynnaker.pyNN.models.neuron.neuron_models \
-    import NeuronModelLeakyIntegrateAndFire
+from spynnaker.pyNN.models.neuron.neuron_models import (
+    NeuronModelLeakyIntegrateAndFire)
 from spynnaker.pyNN.models.neuron.input_types import InputTypeConductance
 from spynnaker.pyNN.models.neuron.synapse_types import SynapseTypeExponential
 from spynnaker.pyNN.models.neuron.threshold_types import ThresholdTypeStatic

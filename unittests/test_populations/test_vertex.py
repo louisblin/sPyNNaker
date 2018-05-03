@@ -1,8 +1,6 @@
 import pytest
-
 from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
-from spynnaker.pyNN.models.neuron.neuron_models.abstract_neuron_model import \
-    AbstractNeuronModel
+from spynnaker.pyNN.models.neuron.neuron_models import AbstractNeuronModel
 from unittests.mocks import MockSimulator
 
 
